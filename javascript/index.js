@@ -22,3 +22,4 @@ function crossSign(){
     document.getElementById("register_box").style.display="none"  
 }
 
+function openBar(){}
