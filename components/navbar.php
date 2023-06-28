@@ -1,6 +1,6 @@
 <section class="navbar">
         <div class="nav_left">
-            <div class="menu">
+            <div class="menu" onclick="openBar()">
             <img src="./images/menu.png" >
             </div>
 

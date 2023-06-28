@@ -264,49 +264,6 @@ body {
   font-size: 0.9vw;
 }
 
-.updated h1 {
-  padding: 0 6vw;
-  display: flex;
-  align-items: center;
-  font-size: 2vw;
-  color: white;
-  background-color: #0e0e0e;
-  height: 8vw;
-}
-
-.anime1 {
-  padding: 0 6vw;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #0e0e0e;
-  width: 100%;
-}
-.anime1 .anime_card {
-  width: 15vw;
-  height: 28vw;
-}
-.anime1 .anime_card .card_img {
-  width: 100%;
-  height: 80%;
-}
-.anime1 .anime_card .card_img img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.anime1 .anime_card div {
-  text-align: center;
-  padding: 0.3vw 0;
-}
-.anime1 .anime_card div h1 {
-  font-size: 1.3vw;
-  font-weight: 400;
-  color: white;
-}
-
 .footer {
   display: flex;
   margin-top: 8vw;
@@ -728,4 +685,4 @@ body {
   font-weight: 500;
   text-decoration: none;
   color: white;
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=video.css.map */

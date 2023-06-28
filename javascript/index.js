@@ -22,4 +22,13 @@ function crossSign(){
     document.getElementById("register_box").style.display="none"  
 }
 
-function openBar(){}
+let menuBoxOpen=false;
+function openBar(){
+    if(!menuBoxOpen){
+        document.getElementById("menu").style.display="flex"  
+        menuBoxOpen=true
+    }else{
+        document.getElementById("menu").style.display="none" 
+        menuBoxOpen=false
+    }
+}
