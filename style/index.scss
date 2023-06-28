@@ -884,7 +884,7 @@ body{
 
 .opts{
     
-    display:flex;
+    display:none;
     flex-direction: column;
     justify-content: space-between; 
     border:0.1vw solid;
@@ -892,9 +892,10 @@ body{
     width: 8vw;
     padding:1vw;
     background-color: #5a2e98;
-    border-radius: 0.1vw;
+    border-radius: 0.3vw;
     position: absolute;
     left:6vw;
+    z-index: 10;
     
     
     li {
