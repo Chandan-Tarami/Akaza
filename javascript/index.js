@@ -25,10 +25,14 @@ function crossSign(){
 let menuBoxOpen=false;
 function openBar(){
     if(!menuBoxOpen){
-        document.getElementById("menu").style.display="flex"  
+        document.getElementById("menu").style.display="flex" 
+        document.getElementById("darkbox_menu").style.display="flex" 
+        document.getElementById("darkbox_menu").style.opacity="0"
         menuBoxOpen=true
     }else{
         document.getElementById("menu").style.display="none" 
+        document.getElementById("darkbox_menu").style.display="none"
+        document.getElementById("darkbox_menu").style.opacity="1"
         menuBoxOpen=false
     }
 }

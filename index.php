@@ -1,3 +1,7 @@
+<?php 
+    $anime_title="one piece";
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akaza</title>
     <link rel="stylesheet" href="./style/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <section class="container" id="darkbox"></section>
+    <section class="container" id="darkbox" ></section>
+    <section class="container" id="darkbox_menu" onclick="openBar()"></section>
     <?php include './components/register.php';?>
     <?php include './components/login.php';?>
     <?php include './components/navbar.php';?>
@@ -23,7 +31,7 @@
         <div class="video_right">
 
             <div class="nav1">
-                <h1>Top Anime</h1>
+                <h1> Top Anime </h1>
             </div>
 
             <div class="top_list">
@@ -33,10 +41,11 @@
                     <div class="num1">
                         1
                     </div>
-                    <img src="./images/onepiece.jpg" >
+                    <a href="video.php"><img src="./images/onepiece.jpg" ></a>
                     <div class="pag1">
                         <h2>One Piece</h2>
                     </div>
+                    
                 </div>
 
 
@@ -84,109 +93,8 @@
             <h1>Recently Updated</h1>
     </section>
 
-    <section class="anime1">
-        <div class="anime_card"> 
-            <div class="card_img">
-                <img src="./images/demonslayer.jpg">
-            </div>
-            <div>
-                <h1>Demon Slayer</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card">
-            <div class="card_img"> 
-            <img src="./images/eminance.jpg">
-            </div>
-            <div>
-                <h1>Eminance in Shadow</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card">
-            <div class="card_img"> 
-            <img src="./images/haik.jpg" >
-            </div>
-            <div>
-                <h1>Haikyuu</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card ">
-            <div class="card_img"> 
-            <img src="./images/naruto.jpg">
-            </div>
-            <div>
-                <h1>Naruto</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card">
-            <div class="card_img"> 
-            <img src="./images/hells.jpg">
-            </div>
-            <div>
-                <h1>Hell's Paradise</h1>
-            </div>
-        </div>
-       
+    <?php include './components/body.php';?>
     
-
-    
-        <div class="anime_card"> 
-            <div class="card_img">
-                <img src="./images/mashle.jpg">
-            </div>
-            <div>
-                <h1>Mashle</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card">
-            <div class="card_img"> 
-            <img src="./images/mystar.jpg">
-            </div>
-            <div>
-                <h1>MyStar</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card">
-            <div class="card_img"> 
-            <img src="./images/jujutsu.jpg" >
-            </div>
-            <div>
-                <h1>Jujutsu Kaisen</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card ">
-            <div class="card_img"> 
-            <img src="./images/goul.jpg">
-            </div>
-            <div>
-                <h1>Tokyo Goul</h1>
-            </div>
-        </div>
-
-
-        <div class="anime_card">
-            <div class="card_img"> 
-            <img src="./images/onepiece.jpg">
-            </div>
-            <div>
-                <h1>One Piece</h1>
-            </div>
-        </div>
-    </section>
-
     <?php include './components/footer.php';?>
 
     <script src="./javascript/index.js"></script>

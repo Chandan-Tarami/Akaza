@@ -102,13 +102,13 @@ body {
 }
 
 .video_section {
-  padding: 0 6vw;
+  padding: 1vw 6vw;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #0e0e0e;
 }
 .video_section .video_left {
+  border-radius: 0.5vw;
   width: 65%;
   overflow: hidden;
 }
@@ -116,152 +116,127 @@ body {
   width: 100%;
 }
 .video_section .video_right {
+  background-color: none;
+  width: 30%;
+  padding: 1vw;
+  border-radius: 20px;
+}
+.video_section .video_right .onepiece img {
+  width: 8vw;
+  margin-bottom: 1vw;
+  border-radius: 1vw;
+}
+.video_section .video_right h1 {
+  color: #b4b0ab;
+  font-size: 1.8vw;
+  font-weight: 800;
+  margin-bottom: 1vw;
+}
+.video_section .video_right p {
+  color: #767471;
+  font-size: 1vw;
+  font-weight: 80;
+  text-align: justify;
+  margin-bottom: 0.8vw;
+}
+
+.episodes {
+  border: 2px solid;
+  border-radius: 0.5vw;
   background-color: #1c1c1c;
-  padding: 0 2vw;
-  width: 32%;
-}
-.video_section .video_right .nav1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5vw;
-  margin-bottom: 1.5vw;
-  color: white;
-}
-.video_section .video_right .nav1 h1 {
-  font-size: 2vw;
-}
-.video_section .video_right .top_list {
   display: flex;
   align-items: center;
+  width: 57.5%;
+  padding: 0.9vw;
+  margin-left: 6vw;
+  margin-bottom: 7vw;
 }
-.video_section .video_right .top_list .top1 {
+.episodes .ep1 {
+  color: #767471;
+  border: 2px solid;
+  width: 3.4vw;
+  height: 2.5vw;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.8vw;
+  border-radius: 0.5vw;
+  border-color: #1c1c1c;
+  background-color: #5a2e98;
+  cursor: pointer;
+}
+.episodes .ep2 {
+  color: #767471;
+  border: 2px solid;
+  width: 3.4vw;
+  height: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2vw;
+  border-radius: 0.5vw;
+  border-color: #1c1c1c;
+  background-color: #5a2e98;
+  cursor: pointer;
+}
+
+.anime1 {
+  padding: 0 6vw;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1vw;
+  background-color: #0e0e0e;
+  width: 100%;
+}
+.anime1 a {
+  text-decoration: none;
+}
+.anime1 a .anime_card1 {
+  width: 15vw;
+  height: 28vw;
+}
+.anime1 a .anime_card1 .card_img {
+  width: 100%;
+  height: 80%;
+}
+.anime1 a .anime_card1 .card_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.anime1 a .anime_card1 div {
+  text-align: center;
+  padding: 0.3vw 0;
+}
+.anime1 a .anime_card1 div h1 {
+  font-size: 1.3vw;
+  font-weight: 400;
   color: white;
 }
-.video_section .video_right .top_list .top1 .num1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px #535353;
-  border-radius: 10px;
-  width: 11%;
-  height: 3vw;
+.anime1 .anime_card {
+  width: 15vw;
+  height: 28vw;
 }
-.video_section .video_right .top_list .top1 img {
-  width: 12%;
-  margin-left: 1vw;
-  border-radius: 10%;
+.anime1 .anime_card .card_img {
+  width: 100%;
+  height: 80%;
 }
-.video_section .video_right .top_list .top1 .pag1 {
-  width: 60%;
-  margin-left: 1vw;
-  font-size: 0.9vw;
+.anime1 .anime_card .card_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.video_section .video_right .top_list .top2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1vw;
+.anime1 .anime_card div {
+  text-align: center;
+  padding: 0.3vw 0;
+}
+.anime1 .anime_card div h1 {
+  font-size: 1.3vw;
+  font-weight: 400;
   color: white;
-}
-.video_section .video_right .top_list .top2 .num2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px #535353;
-  border-radius: 10px;
-  width: 11%;
-  height: 3vw;
-}
-.video_section .video_right .top_list .top2 img {
-  width: 12%;
-  margin-left: 1vw;
-  border-radius: 10%;
-}
-.video_section .video_right .top_list .top2 .pag2 {
-  width: 60%;
-  margin-left: 1vw;
-  font-size: 0.9vw;
-}
-.video_section .video_right .top_list .top3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1vw;
-  color: white;
-}
-.video_section .video_right .top_list .top3 .num3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px #535353;
-  border-radius: 10px;
-  height: 3vw;
-  width: 11%;
-}
-.video_section .video_right .top_list .top3 img {
-  width: 12%;
-  margin-left: 1vw;
-  border-radius: 10%;
-}
-.video_section .video_right .top_list .top3 .pag3 {
-  width: 60%;
-  margin-left: 1vw;
-  font-size: 0.9vw;
-}
-.video_section .video_right .top_list .top4 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1vw;
-  color: white;
-}
-.video_section .video_right .top_list .top4 .num4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px #535353;
-  border-radius: 10px;
-  width: 11%;
-  height: 3vw;
-}
-.video_section .video_right .top_list .top4 img {
-  width: 12%;
-  margin-left: 1vw;
-  border-radius: 10%;
-}
-.video_section .video_right .top_list .top4 .pag4 {
-  width: 60%;
-  margin-left: 1vw;
-  font-size: 0.9vw;
-}
-.video_section .video_right .top_list .top5 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-}
-.video_section .video_right .top_list .top5 .num5 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px #535353;
-  border-radius: 10px;
-  width: 11%;
-  height: 3vw;
-}
-.video_section .video_right .top_list .top5 img {
-  width: 12%;
-  margin-left: 1vw;
-  border-radius: 10%;
-}
-.video_section .video_right .top_list .top5 .pag5 {
-  width: 60%;
-  margin-left: 1vw;
-  font-size: 0.9vw;
 }
 
 .footer {

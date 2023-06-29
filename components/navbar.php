@@ -5,8 +5,8 @@
             </div>
 
             <div class="logo">
-               <a href="#"><img src="./images/logo.jpg" ></a>
-                <a href="#">Akaza</a>
+               <a href="index.php"><img src="./images/logo.jpg" ></a>
+                <a href="index.php">Akaza</a>
             </div>
 
             <div class="search">
