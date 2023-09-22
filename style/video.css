@@ -182,10 +182,10 @@ body {
 
 .anime1 {
   padding: 0 6vw;
-  display: flex;
+  display: inline-flex;
+  gap: 2.905vw;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   background-color: #0e0e0e;
   width: 100%;
 }
@@ -198,7 +198,7 @@ body {
 }
 .anime1 a .anime_card1 .card_img {
   width: 100%;
-  height: 80%;
+  height: 90%;
 }
 .anime1 a .anime_card1 .card_img img {
   width: 100%;
@@ -211,29 +211,6 @@ body {
   padding: 0.3vw 0;
 }
 .anime1 a .anime_card1 div h1 {
-  font-size: 1.3vw;
-  font-weight: 400;
-  color: white;
-}
-.anime1 .anime_card {
-  width: 15vw;
-  height: 28vw;
-}
-.anime1 .anime_card .card_img {
-  width: 100%;
-  height: 80%;
-}
-.anime1 .anime_card .card_img img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.anime1 .anime_card div {
-  text-align: center;
-  padding: 0.3vw 0;
-}
-.anime1 .anime_card div h1 {
   font-size: 1.3vw;
   font-weight: 400;
   color: white;

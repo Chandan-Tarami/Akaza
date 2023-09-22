@@ -1,3 +1,21 @@
+<?php 
+
+session_start();
+
+$user=$_SESSION["user"];
+$vid_id=$_GET['id'];
+
+include './database/Database.php';
+
+
+$database=new Database();
+
+$anime=$database->get_anime_info($vid_id);
+
+$anime_data = $database->get_anime_list();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +44,12 @@
         <div class="video_right">
 
             <div class="onepiece">
-                <img src="./images/onepiece.jpg" >
+                <img src="./images/<?php echo $anime['banner_loc'] ?>" >
             </div>   
 
-            <h1>One Piece</h1>
+            <h1><?php echo $anime['title'] ?></h1>
 
-            <p>Gold D Roger was known as the "Pirate King," the strongest and most infamous being to have sailed the Grand Line. The capture and execution of Roger by the World Government brought a change throughout the world. His last words before his death revealed the existence of the greatest treasure in the world, One Piece.</p>
+            <p> <?php echo $anime['description'] ?> </p>
             <p>Akaza is the best site to watch anime online.Even you can also  find Toei Animation anime on it.</p>  
         </div>
 
@@ -44,6 +62,7 @@
 
        
     <?php include './components/body.php';?>
+
     <?php include './components/footer.php';?>
 
     <script src="./javascript/index.js"></script>

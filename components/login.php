@@ -18,20 +18,20 @@
 
             
 
-            <form action="" class="form_login">
+            <form action="" method="post" class="form_login">
                 <div class="email">
-                    <input type="text" placeholder="Your Email" required>
+                    <input type="text" placeholder="Username" name="username" required>
                     <div class="email_icon">
                         <img src="./images/email_icon.png" >
                     </div>
                 </div>
 
                 <div class="password">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password" name="password" required>
                     <div class="pass_icon"><img src="./images/password_icon.png" ></div>
                 </div>
 
-                <button class="login_btn">
+                <button class="login_btn" type="submit" name="submit" value="login">
                     <span>Login</span>
                 </button>
 

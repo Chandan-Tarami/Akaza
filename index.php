@@ -1,6 +1,50 @@
-<?php 
-    $anime_title="one piece";
-?> 
+<?php
+session_start();
+include './database/Database.php';
+$database = new Database();
+$user = false;
+
+
+$anime_data = $database->get_anime_list();
+
+
+if (isset($_POST['submit'])) {
+    if ($_POST['submit'] == "login") {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $user = $database->check_user($username, $password);
+    }
+
+    if ($_POST['submit'] == "register") {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirmPassword = $_POST['confirm_password'];
+
+        if ($password !== $confirmPassword) {
+            echo  "<script>alert('Error: Passwords do not match')</script>";
+            
+        }
+
+        $registration_successful = $database->register_user($username, $email, $password);
+
+        if ($registration_successful) {
+            // Redirect to a success page or perform any other necessary actions
+            echo "<script>alert('Registered')</script>";
+            
+        } else {
+            // Handle registration error
+            echo "<script>alert('Registration fail')</script>";
+        }
+    }
+
+}
+
+$_SESSION["user"]=$user;
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

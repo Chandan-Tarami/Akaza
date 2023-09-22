@@ -17,6 +17,11 @@
 
         </div>
         
+        <?php if ($user) { ?>
+        <div class="nav_right"><?php echo $user; ?></div>
+    <?php } else { ?>
         <div class="nav_right" onclick="openSignIn()">Sign in</div>
+    <?php } ?>
+
 
     </section>

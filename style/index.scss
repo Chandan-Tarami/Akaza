@@ -340,10 +340,10 @@ body{
 
 .anime1{
     padding:0 6vw;
-    display:flex;
+    display:inline-flex;
+    gap: 2.905vw;
     flex-wrap: wrap;
     align-items:center;
-    justify-content: space-between;
     background-color:#0e0e0e;
     width:100%;
 
@@ -355,7 +355,7 @@ body{
             
             .card_img{
                 width:100%;
-                height:80%;
+                height:90%;
                
     
                 img{
@@ -384,41 +384,6 @@ body{
         }
     }
     
-
-
-    .anime_card{
-        width:15vw;
-        height:28vw;
-        
-        .card_img{
-            width:100%;
-            height:80%;
-           
-
-            img{
-                width:100%;
-                height:100%;
-                object-fit: cover;
-
-    
-            }
-        }
-
-        div{
-            text-align: center;
-            padding:0.3vw 0;
-        
-            h1{
-                font-size: 1.3vw;
-                font-weight: 400;
-                color:white;
-                
-            }
-        }
-        
-        
-        
-    }
 
 }
 
@@ -512,7 +477,7 @@ body{
 .register_login{
     display:none;
     justify-content: space-between;
-    align-items: centers;
+    align-items: center;
     border:solid 0.1vw rgb(156, 153, 153);
     border-radius:1.5vw;
     background-color:beige;
@@ -751,7 +716,7 @@ body{
     background-color:beige;
     width:40%; 
     height:50%;
-    padding:1.5svw;
+    padding:1.5vw;
     position:fixed;
     z-index:10;
     top:10vw;
