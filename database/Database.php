@@ -5,7 +5,7 @@
         public $password="";
         public $database="Akaza";
         public $connection;
-    
+
         function __construct(){
             $this->connection=new mysqli($this->servername,$this->username,$this->password,$this->database);
             
@@ -61,6 +61,57 @@
             return $anime_data;
         }
 
+
+        public function get_anime_list_by_genre($genre) {
+            
+            if($genre == "All"){
+                $query = "SELECT * FROM anime_list ORDER BY vid_id DESC";
+                $result = $this->connection->query($query);
+                $anime_data = [];
+
+                while ($row = mysqli_fetch_array($result)) {
+                    $anime_data[] = $row;
+                }
+
+                return $anime_data;
+            }
+            else{
+                $sql = "SELECT * FROM anime_list WHERE genre = ? ORDER BY vid_id DESC";
+                $stmt = $this->connection->prepare($sql);
+                $stmt->bind_param("s", $genre);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+
+            
+        }
+
+        public function incrementAnimeViews($vid_id) {
+            // Prepare and execute SQL query to increment views by 1 based on vid_id
+            $sql = "UPDATE anime_list SET views = views + 1 WHERE vid_id = ?";
+            $stmt = $this->connection->prepare($sql);
+            $stmt->bind_param("i", $vid_id);
+            $stmt->execute();
+            $stmt->close();
+        }
+        
+
+        public function getTopAnime() {
+            // Prepare and execute SQL query to get top 5 anime videos based on views
+            $sql = "SELECT vid_id, title, banner_loc FROM anime_list ORDER BY views DESC LIMIT 5";
+            $result = $this->connection->query($sql);
+    
+            $top_anime = array();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $top_anime[] = $row;
+                }
+            }
+    
+            return $top_anime;
+        }
+
         function get_anime_info($id){
             $query = "SELECT * FROM anime_list WHERE vid_id='$id'";
             $result = $this->connection->query($query);
@@ -71,6 +122,8 @@
             }
 
         }
+
+
 
     }
 ?>

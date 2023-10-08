@@ -87,7 +87,10 @@ body {
 .navbar .nav_left .search .search_icon_box img {
   width: 1.6vw;
 }
-.navbar .nav_right {
+.navbar .nav_r {
+  display: flex;
+}
+.navbar .nav_r .nav_right {
   background-color: #5a2e98;
   color: white;
   border-radius: 5vw;
@@ -99,6 +102,26 @@ body {
   height: 3vw;
   font-weight: 600;
   cursor: pointer;
+  margin-right: 2vw;
+}
+.navbar .nav_r .log {
+  background-color: #5a2e98;
+  color: white;
+  border-radius: 1vw;
+  font-size: 1.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+}
+.navbar .nav_r .log a {
+  color: white;
+  text-decoration: none;
+}
+.navbar .nav_r .log a img {
+  height: 80%;
 }
 
 .video_section {

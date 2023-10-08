@@ -1,6 +1,27 @@
 <?php
 include './database/Database.php';
-$con = mysqli_connect("localhost","root","","Akaza");
+
+if(isset($_POST['login'])){
+    $db = new Database(); 
+
+    $adminName = $_POST['AdminName'];
+    $adminPassword = $_POST['AdminPassword'];
+
+    $query = "SELECT * FROM `admin_login` WHERE `Admin_Name`=? AND `ADMIN_PASSWORD`=?";
+    $stmt = $db->connection->prepare($query);
+    $stmt->bind_param("ss", $adminName, $adminPassword);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if($result->num_rows == 1){
+        $_SESSION['AdminLoginId'] = $adminName;
+        header("location: adminpanel.php");
+        exit;
+    } else {
+        echo "<script>alert('Incorrect Password');</script>";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +48,12 @@ $con = mysqli_connect("localhost","root","","Akaza");
 
             <div class="admin2">
                 <img src="./images/user_icon.png" >
-                <input type="text" name="AdminName" id="username">
+                <input type="text" name="AdminName" id="username" required>
             </div>
            
             <div class="admin3">
                 <img src="./images/password_icon.png">
-                <input type="password" name="AdminPassword" id="pass">
+                <input type="password" name="AdminPassword" id="pass" required>
             </div>
             
             <button type="submit" name="login">Login</button>

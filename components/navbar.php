@@ -16,9 +16,14 @@
 
 
         </div>
-        
+
+        <div class="nav_r">
         <?php if ($user) { ?>
-        <div class="nav_right"><?php echo $user; ?></div>
+        <div class="nav_right"><?php echo "<p>".$user."</p>"; ?> </div>
+             <div class="log">  <a href="logout.php" class="logout" onclick="loggout()"><img src="./images/logoutIcon.png"></a></div>
+        </div>
+
+
     <?php } else { ?>
         <div class="nav_right" onclick="openSignIn()">Sign in</div>
     <?php } ?>

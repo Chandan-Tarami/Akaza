@@ -31,7 +31,7 @@
                     <div class="pass_icon"><img src="./images/password_icon.png" ></div>
                 </div>
 
-                <button class="login_btn" type="submit" name="submit" value="login">
+                <button class="login_btn" type="submit" name="submit" value="login" onclick="loggin()">
                     <span>Login</span>
                 </button>
 

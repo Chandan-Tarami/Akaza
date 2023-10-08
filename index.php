@@ -1,11 +1,16 @@
 <?php
 session_start();
 include './database/Database.php';
-$database = new Database();
+$database= new Database();
 $user = false;
 
+if(isset($_SESSION['user'])){
+    $user=$_SESSION['user'];
+}
 
 $anime_data = $database->get_anime_list();
+
+$top_anime = $database->getTopAnime();
 
 
 if (isset($_POST['submit'])) {
@@ -14,6 +19,8 @@ if (isset($_POST['submit'])) {
         $password = $_POST['password'];
 
         $user = $database->check_user($username, $password);
+
+        $_SESSION['user']=$username;
     }
 
     if ($_POST['submit'] == "register") {
@@ -41,7 +48,6 @@ if (isset($_POST['submit'])) {
 
 }
 
-$_SESSION["user"]=$user;
 
 
 ?>
@@ -69,7 +75,7 @@ $_SESSION["user"]=$user;
 
     <section class="video_section">
         <div class="video_left">
-            <video src="./videos/Aka.mp4" loop autoplay muted ></video>
+            <video src="./assets/Aka.mp4" loop autoplay muted ></video>
         </div>
 
         <div class="video_right">
@@ -79,55 +85,21 @@ $_SESSION["user"]=$user;
             </div>
 
             <div class="top_list">
-
             <div>
-                <div class="top1">
-                    <div class="num1">
-                        1
+                <?php foreach ($top_anime as $index => $anime): ?>
+                    <div class="top<?= $index + 1 ?>">
+                        <div class="num<?= $index + 1 ?>">
+                            <?= $index + 1 ?>
+                        </div>
+                        <a href="video.php?id=<?= $anime['vid_id'] ?>"><img src="./uploads/images/<?= $anime['banner_loc'] ?>" ></a>
+                        <div class="pag<?= $index + 1 ?>">
+                            <h2><?= $anime['title'] ?></h2>
+                        </div>
                     </div>
-                    <a href="video.php"><img src="./images/onepiece.jpg" ></a>
-                    <div class="pag1">
-                        <h2>One Piece</h2>
-                    </div>
-                    
-                </div>
-
-
-                <div class="top2">
-                    <div class="num2">2</div>
-                    <img src="./images/jujutsu.jpg" >
-                    <div class="pag2">
-                        <h2>Jujutsu Kaisen</h2>
-                    </div>
-                </div>
-
-
-                <div class="top3">
-                    <div class="num3">3</div>
-                    <img src="./images/mashle.jpg" >
-                    <div class="pag3">
-                        <h2>Mashle</h2>
-                    </div>
-                </div>
-
-                <div class="top4">
-                    <div class="num4">4</div>
-                    <img src="./images/demonslayer.jpg" >
-                    <div class="pag4">
-                        <h2>Demon Slayer</h2>
-                    </div>
-                </div>
-
-                <div class="top5">
-                    <div class="num5">5</div>
-                    <img src="./images/hells.jpg" >
-                    <div class="pag5">
-                        <h2>Hell's Paradise</h2>
-                    </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
-           
+        </div>
+                
         </div>
         </div>
 

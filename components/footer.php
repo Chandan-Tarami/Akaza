@@ -22,7 +22,11 @@
         <div class="footer_center">
             <h1>Links</h1>
             <a href="#">Top Anime</a>
-            <a href="#">Recently Updated</a>
+            <a href="#">Recently Updated</a><br>
+            <p>This page was viewed</p>
+            <!-- <script type="text/javascript" src="//counter.websiteout.net/js/7/1/0/0"></script> -->
+            <script type="text/javascript" src="//counter.websiteout.net/js/7/2/0/0"></script>
+            <span>Times</span>
         </div>
 
         <div class="footer_right">

@@ -1,14 +1,54 @@
 <?php 
-
 session_start();
 
-$user=$_SESSION["user"];
+include './database/Database.php';
+$database = new Database();
+
+$user = false;
+
+if(isset($_SESSION['user'])){
+    $user=$_SESSION['user'];
+}
+
 $vid_id=$_GET['id'];
 
-include './database/Database.php';
+$database->incrementAnimeViews($vid_id);
 
+if (isset($_POST['submit'])) {
+    if ($_POST['submit'] == "login") {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-$database=new Database();
+        $user = $database->check_user($username, $password);
+
+        $_SESSION['user']=$username;
+    }
+
+    if ($_POST['submit'] == "register") {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirmPassword = $_POST['confirm_password'];
+
+        if ($password !== $confirmPassword) {
+            echo  "<script>alert('Error: Passwords do not match')</script>";
+            
+        }
+
+        $registration_successful = $database->register_user($username, $email, $password);
+
+        if ($registration_successful) {
+            // Redirect to a success page or perform any other necessary actions
+            echo "<script>alert('Registered')</script>";
+            
+        } else {
+            // Handle registration error
+            echo "<script>alert('Registration fail')</script>";
+        }
+    }
+
+}
+
 
 $anime=$database->get_anime_info($vid_id);
 
@@ -38,13 +78,13 @@ $anime_data = $database->get_anime_list();
 
      <section class="video_section">
         <div class="video_left">
-            <video src="./videos/video.mp4" controls ></video>
+            <video src="./uploads/videos/<?php echo $anime['location'] ?>" controls ></video>
         </div>
 
         <div class="video_right">
 
             <div class="onepiece">
-                <img src="./images/<?php echo $anime['banner_loc'] ?>" >
+                <img src="./uploads/images/<?php echo $anime['banner_loc'] ?>" >
             </div>   
 
             <h1><?php echo $anime['title'] ?></h1>
@@ -63,7 +103,7 @@ $anime_data = $database->get_anime_list();
        
     <?php include './components/body.php';?>
 
-    <?php include './components/footer.php';?>
+    <?php include './components/footer1.php';?>
 
     <script src="./javascript/index.js"></script>
     

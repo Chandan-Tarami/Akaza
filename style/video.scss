@@ -110,6 +110,11 @@ body{
 
 
 
+    .nav_r{
+        display:flex;
+        
+
+
     .nav_right{
         background-color: $web_blue;
         color:white;
@@ -122,7 +127,32 @@ body{
         height:3vw;
         font-weight: 600;
         cursor:pointer;
+        margin-right: 2vw;
     }
+
+    .log{
+        background-color: $web_blue;
+        color:white;
+        border-radius: 1vw;
+        font-size: 1.2vw;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width:3vw;
+        height:3vw;
+        cursor:pointer;
+
+        a{
+            color:white;
+            text-decoration: none;
+
+            img{
+                // width:80%;
+                height:80%;
+            }
+        }
+    }
+}
 }
 
 .video_section{
