@@ -1,7 +1,7 @@
 <?php
 include './database/Database.php';
+$con = mysqli_connect("localhost","root","","Akaza");
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +38,6 @@ include './database/Database.php';
             <button type="submit" name="login">Login</button>
         </div>
     </form>
-
-<?php
-    if(isset($_POST['login'])){
-        
-       $query = "SELECT * FROM `admin_login` WHERE `Admin_Name`=`$_POST[AdminName]` AND `ADMIN_PASSWORD`=`$_POST[AdminPassword]`";
-       $result = mysqli_query($con,$query);
-    }
-?>
 
 </body>
 </html>

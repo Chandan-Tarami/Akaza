@@ -6,10 +6,6 @@
         public $database="Akaza";
         public $connection;
     
-
-        public $con = mysqli_connect("localhost","root","","Akaza");
-
-
         function __construct(){
             $this->connection=new mysqli($this->servername,$this->username,$this->password,$this->database);
             
@@ -34,7 +30,6 @@
         }
 
         function register_user($username, $email, $password) {
-            // Check if the username already exists in the database
             $existingUserQuery = "SELECT * FROM users WHERE username = '$username'";
             $existingUserResult = $this->connection->query($existingUserQuery);
         
@@ -42,8 +37,6 @@
                 echo "<script>alert('Error: Username already exists')</script>";
                 return false;
             }
-        
-            // Insert the new user into the database
             $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
         
             if ($this->connection->query($query) === true) {
